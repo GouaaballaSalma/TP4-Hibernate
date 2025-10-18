@@ -1,11 +1,11 @@
-package com.example.test;
+package test;
 
-import com.example.entities.*;
-import com.example.services.*;
-import com.example.entities.Machine;
-import com.example.entities.Salle;
-import com.example.services.MachineService;
-import com.example.services.SalleService;
+import entities.*;
+import services.*;
+import entities.Machine;
+import entities.Salle;
+import services.MachineService;
+import services.SalleService;
 
 import java.util.Date;
 

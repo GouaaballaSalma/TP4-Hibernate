@@ -1,6 +1,7 @@
-package com.example.entities;
+package entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 
 import java.util.List;
 

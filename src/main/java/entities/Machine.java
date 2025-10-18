@@ -1,6 +1,6 @@
-package com.example.entities;
+package entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 
 import java.util.Date;
@@ -44,4 +44,20 @@ public class Machine {
         this.salle = salle;
     }
     public Machine(){}
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setRef(String ref) {
+        this.ref = ref;
+    }
+
+    public void setDateAchat(Date dateAchat) {
+        this.dateAchat = dateAchat;
+    }
+
+    public void setSalle(Salle salle) {
+        this.salle = salle;
+    }
 }

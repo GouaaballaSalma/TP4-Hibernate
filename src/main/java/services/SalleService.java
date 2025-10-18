@@ -1,8 +1,8 @@
-package com.example.services;
+package services;
 
-import com.example.dao.IDao;
-import com.example.entities.Salle;
-import com.example.util.HibernateUtil;
+import dao.IDao;
+import entities.Salle;
+import util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -85,7 +85,7 @@ public class SalleService implements IDao<Salle> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            salle = session.get(com.example.entities.Salle.class, id);
+            salle = session.get(Salle.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if(tx != null)
@@ -106,7 +106,7 @@ public class SalleService implements IDao<Salle> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            salles = session.createQuery("from Salle", com.example.entities.Salle.class).list();
+            salles = session.createQuery("from Salle", Salle.class).list();
             tx.commit();
         } catch (HibernateException e) {
             if(tx != null)

@@ -1,8 +1,8 @@
-package com.example.services;
+package services;
 
-import com.example.dao.IDao;
-import com.example.entities.Machine;
-import com.example.util.HibernateUtil;
+import dao.IDao;
+import entities.Machine;
+import util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -86,7 +86,7 @@ public class MachineService implements IDao<Machine> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            machine = session.get(com.example.entities.Machine.class, id);
+            machine = session.get(Machine.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if(tx != null)
@@ -107,7 +107,7 @@ public class MachineService implements IDao<Machine> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            machines = session.createQuery("from Machine", com.example.entities.Machine.class).list();
+            machines = session.createQuery("from Machine", Machine.class).list();
             tx.commit();
         } catch (HibernateException e) {
             if(tx != null)
